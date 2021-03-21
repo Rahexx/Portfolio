@@ -1,9 +1,10 @@
 .header {
+  padding-bottom: 15px;
   background-color: var(--light-bg);
 
   &__leftSide,
   &__rightSide {
-    height: 65vh;
+    height: 60vh;
     position: relative;
   }
 
@@ -23,6 +24,7 @@
     height: 60vh;
     width: 100vw;
     object-fit: cover;
+    object-position: 100% 25%;
   }
   &__leftSideTitle,
   &__rightSideTitle {
@@ -52,7 +54,7 @@
   &__rightBackground {
     margin: 0 10vw;
     display: grid;
-    grid-template: repeat(3, calc(80vw / 3)) / repeat(3, calc(80vw / 3));
+    grid-template: repeat(3, calc(75vw / 3)) / repeat(3, calc(75vw / 3));
     align-items: center;
     justify-items: center;
   }
@@ -64,8 +66,8 @@
     opacity: 5%;
   }
   &__iconBg {
-    height: 13vw;
-    width: 13vw;
+    height: 11vw;
+    width: 11vw;
     margin-bottom: 5px;
     object-fit: fill;
   }
