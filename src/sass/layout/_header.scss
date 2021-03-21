@@ -1,0 +1,77 @@
+.header {
+  background-color: var(--light-bg);
+
+  &__leftSide,
+  &__rightSide {
+    height: 65vh;
+    position: relative;
+  }
+
+  &__leftSide {
+    &::after {
+      content: '';
+      display: block;
+      height: 2px;
+      width: 75vw;
+      position: absolute;
+      bottom: -1px;
+      left: calc(25vw / 2);
+      background-color: black;
+    }
+  }
+  &__profileImage {
+    height: 60vh;
+    width: 100vw;
+    object-fit: cover;
+  }
+  &__leftSideTitle,
+  &__rightSideTitle {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  &__leftSideTitle {
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  &__title {
+    font-size: 3.2rem;
+  }
+  &__icon {
+    height: 27px;
+    width: 27px;
+    margin-top: 19px;
+  }
+  &__rightSideTitle {
+    margin: 5px 0 20px;
+  }
+  &__rightBackground {
+    margin: 0 10vw;
+    display: grid;
+    grid-template: repeat(3, calc(80vw / 3)) / repeat(3, calc(80vw / 3));
+    align-items: center;
+    justify-items: center;
+  }
+  &__skillContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 5%;
+  }
+  &__iconBg {
+    height: 13vw;
+    width: 13vw;
+    margin-bottom: 5px;
+    object-fit: fill;
+  }
+  &__skillName {
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+}
