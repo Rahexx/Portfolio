@@ -5,6 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body class="wrapper">
     <header class="header">
@@ -118,16 +123,16 @@
       </span>
     </button>
     <nav class="nav">
+      <div class="nav__themeMode">
+        <i class="fas fa-moon nav__theme"></i>
+        <i class="fas fa-sun nav__theme"></i>
+      </div>
       <ul class="nav__list">
-        <li class="nav__item">O mnie</li>
+        <li class="nav__item nav__item--active">O mnie</li>
         <li class="nav__item">Umiejętności</li>
         <li class="nav__item">Projekty</li>
         <li class="nav__item">Kontakt</li>
       </ul>
-      <div class="nav__themeMode">
-        <img class="nav__theme" src="./assets/moon.png" alt="ikona księżyca" />
-        <img class="nav__theme" src="./assets/sun.png" alt="ikona słońca" />
-      </div>
     </nav>
     <main class="main">
       <section class="section section--odd">
