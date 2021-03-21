@@ -1,0 +1,55 @@
+.hamburger {
+  margin: 0;
+  border: 0;
+  padding: 10px;
+  display: inline-block;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+
+  &--active {
+    & .hamburger__inner {
+      background-color: transparent;
+    }
+
+    & .hamburger__inner::before {
+      transform: translateY(-10px) rotate(45deg);
+    }
+
+    & .hamburger__inner::after {
+      transform: translateY(10px) rotate(-45deg);
+    }
+  }
+
+  &__box {
+    width: 28px;
+    height: 19px;
+    display: inline-block;
+    position: relative;
+  }
+
+  &__inner {
+    @include hamburger-line;
+
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+
+    &::after,
+    &::before {
+      @include hamburger-line;
+
+      content: '';
+      left: 0;
+    }
+
+    &::after {
+      top: -10px;
+    }
+
+    &::before {
+      top: 10px;
+    }
+  }
+}
