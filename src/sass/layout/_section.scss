@@ -1,0 +1,91 @@
+.section {
+  height: 120vh;
+  margin-bottom: 60px;
+
+  &--project {
+    height: 135vh;
+  }
+
+  &__leftSide {
+    @include sectionSide;
+
+    &::after {
+      @include separator;
+      left: calc((25vw - 30px) / 2);
+    }
+  }
+
+  &__profileImage {
+    height: 40vh;
+    width: 40vh;
+    margin-bottom: 40px;
+    object-fit: cover;
+  }
+
+  &__icon {
+    @include icon;
+
+    &--bottom {
+      margin-top: 0;
+    }
+  }
+
+  &__rightSide {
+    @include sectionSide;
+  }
+
+  &__title {
+    margin: 30px 0;
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  &__text {
+    width: 80vw;
+    line-height: 20px;
+  }
+
+  &__iconHolder {
+    margin: 30px 0 0;
+    display: grid;
+    grid-template: repeat(3, 30vw) / repeat(3, 30vw);
+    align-items: center;
+    justify-items: center;
+  }
+
+  &__skillIcon {
+    &:nth-child(1),
+    &:nth-child(4) {
+      @include skillIcon(48px, 41px);
+    }
+    &:nth-child(2),
+    &:nth-child(3),
+    &:nth-child(5),
+    &:nth-child(9) {
+      @include skillIcon(48px, 48px);
+    }
+    &:nth-child(6) {
+      @include skillIcon(48px, 55px);
+    }
+    &:nth-child(7) {
+      @include skillIcon(48px, 64px);
+    }
+    &:nth-child(8) {
+      @include skillIcon(48px, 40px);
+    }
+  }
+
+  &__appImage {
+    width: 105%;
+    transform: translateX(-5%);
+  }
+
+  &__listTechnology {
+    width: 80vw;
+    margin-top: 20px;
+  }
+
+  &__listItem {
+    padding: 7px 0;
+  }
+}
