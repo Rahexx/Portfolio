@@ -4,3 +4,34 @@
   background-color: var(--light-bg);
   position: absolute;
 }
+
+@mixin icon {
+  font-size: 2.7rem;
+  margin-top: 19px;
+  color: black;
+}
+
+@mixin separator {
+  content: '';
+  display: block;
+  height: 2px;
+  width: 75vw;
+  position: absolute;
+  bottom: -1px;
+  left: calc(25vw / 2);
+  background-color: black;
+}
+
+@mixin sectionSide {
+  padding: 10px 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin skillIcon($height, $width) {
+  height: $height;
+  width: $width;
+}
