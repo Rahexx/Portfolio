@@ -1,0 +1,26 @@
+.footer {
+  height: 25vw;
+  padding: 13px 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: var(--light-bg);
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 12.5vw;
+    height: 2px;
+    width: 75vw;
+    background-color: #fafafaaf;
+  }
+
+  &__info {
+    font-size: 1.4rem;
+    color: #fafafaaf;
+  }
+}
