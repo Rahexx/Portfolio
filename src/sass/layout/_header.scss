@@ -10,14 +10,7 @@
 
   &__leftSide {
     &::after {
-      content: '';
-      display: block;
-      height: 2px;
-      width: 75vw;
-      position: absolute;
-      bottom: -1px;
-      left: calc(25vw / 2);
-      background-color: black;
+      @include separator;
     }
   }
   &__profileImage {
@@ -44,9 +37,11 @@
     font-size: 3rem;
   }
   &__icon {
-    font-size: 2.7rem;
-    margin-top: 19px;
-    color: black;
+    @include icon;
+
+    &--bottom {
+      margin: 0 0 10px;
+    }
   }
   &__rightSideTitle {
     margin: 13px 0 20px;
