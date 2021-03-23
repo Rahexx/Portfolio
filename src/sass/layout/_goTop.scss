@@ -11,6 +11,10 @@
   background-color: var(--light-bg);
   border-radius: 11px;
 
+  @include mq(small) {
+    right: 30px;
+  }
+
   &__arrow {
     font-size: 2rem;
   }

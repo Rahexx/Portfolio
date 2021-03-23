@@ -8,6 +8,10 @@
   align-items: center;
   background-color: var(--light-bg);
 
+  @include mq(small) {
+    height: 15vw;
+  }
+
   &::before {
     content: '';
     display: block;
