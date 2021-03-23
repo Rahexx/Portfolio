@@ -11,6 +11,14 @@
     }
   }
 
+  @include mq(small) {
+    height: 660px;
+
+    &:nth-last-child(1) {
+      height: 600px;
+    }
+  }
+
   &--project {
     height: 135vh;
 
@@ -37,6 +45,11 @@
     @include mq(extra-small) {
       height: 30vh;
       width: 30vh;
+    }
+
+    @include mq(small) {
+      height: 63vh;
+      width: 63vh;
     }
   }
 
@@ -73,6 +86,10 @@
     @include mq(extra-small) {
       grid-template: repeat(3, 25vw) / repeat(3, 25vw);
     }
+
+    @include mq(small) {
+      grid-template: repeat(3, calc(80vh / 3)) / repeat(3, 27vw);
+    }
   }
 
   &__skillIcon {
@@ -100,6 +117,11 @@
   &__appImage {
     width: 105%;
     transform: translateX(-5%);
+
+    @include mq(small) {
+      width: 75%;
+      transform: translateX(15%);
+    }
   }
 
   &__listTechnology {
