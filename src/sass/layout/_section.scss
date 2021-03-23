@@ -2,8 +2,21 @@
   height: 120vh;
   margin-bottom: 60px;
 
+  @include mq(extra-small) {
+    height: 750px;
+    margin-bottom: 0;
+
+    &:nth-last-child(1) {
+      height: 680px;
+    }
+  }
+
   &--project {
     height: 135vh;
+
+    @include mq(extra-small) {
+      height: 900px;
+    }
   }
 
   &__leftSide {
@@ -20,6 +33,11 @@
     width: 40vh;
     margin-bottom: 40px;
     object-fit: cover;
+
+    @include mq(extra-small) {
+      height: 30vh;
+      width: 30vh;
+    }
   }
 
   &__icon {
@@ -51,6 +69,10 @@
     grid-template: repeat(3, 30vw) / repeat(3, 30vw);
     align-items: center;
     justify-items: center;
+
+    @include mq(extra-small) {
+      grid-template: repeat(3, 25vw) / repeat(3, 25vw);
+    }
   }
 
   &__skillIcon {

@@ -3,6 +3,9 @@
 }
 
 $breakpoints: (
+  extra-small: (
+    min-width: 360px,
+  ),
   small: (
     min-width: 550px,
   ),
