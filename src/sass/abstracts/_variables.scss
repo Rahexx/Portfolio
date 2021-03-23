@@ -1,3 +1,18 @@
 :root {
   --light-bg: #9ccaec;
 }
+
+$breakpoints: (
+  small: (
+    min-width: 550px,
+  ),
+  medium: (
+    min-width: 768px,
+  ),
+  large: (
+    min-width: 1024px,
+  ),
+  extra-large: (
+    min-width: 1600px,
+  ),
+);
