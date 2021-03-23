@@ -7,7 +7,7 @@
   left: 0;
   z-index: 2;
   background-color: #6abefc;
-  transform: translateX(0vw);
+  transform: translateX(-100vw);
   transition: 0.5s;
 
   @include mq(medium) {
