@@ -6,6 +6,10 @@
   &__rightSide {
     height: 60vh;
     position: relative;
+
+    @include mq(small) {
+      height: 100vh;
+    }
   }
 
   &__leftSide {
@@ -13,11 +17,21 @@
       @include separator;
     }
   }
+
+  &__rightSide {
+    @include mq(small) {
+      height: 142vh;
+    }
+  }
   &__profileImage {
     height: 60vh;
     width: 100vw;
     object-fit: cover;
     object-position: 100% 25%;
+
+    @include mq(small) {
+      height: 100vh;
+    }
   }
   &__leftSideTitle,
   &__rightSideTitle {
@@ -52,6 +66,11 @@
     grid-template: repeat(3, calc(75vw / 3)) / repeat(3, calc(75vw / 3));
     align-items: center;
     justify-items: center;
+
+    @include mq(small) {
+      margin: 0 5vw;
+      grid-template: repeat(3, calc(100vh / 3)) / repeat(3, 30vw);
+    }
   }
   &__skillContainer {
     display: flex;
