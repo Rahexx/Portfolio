@@ -13,14 +13,14 @@
     display: block;
     position: absolute;
     top: 0;
-    left: 12.5vw;
+    left: 5vw;
     height: 2px;
-    width: 75vw;
-    background-color: #fafafaaf;
+    width: 90vw;
+    background-color: rgba(0, 0, 0, 0.3);
   }
 
   &__info {
     font-size: 1.4rem;
-    color: #fafafaaf;
+    color: rgba(0, 0, 0, 0.6);
   }
 }
