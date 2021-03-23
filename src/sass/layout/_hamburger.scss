@@ -9,6 +9,11 @@
   z-index: 3;
   cursor: pointer;
 
+  @include mq(small) {
+    top: 30px;
+    right: 30px;
+  }
+
   &--active {
     & .hamburger__inner {
       background-color: transparent;

@@ -21,6 +21,10 @@
     align-items: center;
     border-radius: 30px;
 
+    @include mq(small) {
+      width: 15vw;
+    }
+
     &::after {
       content: '';
       display: block;
@@ -47,6 +51,12 @@
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+
+    @include mq(small) {
+      height: 50vh;
+      width: 25vw;
+      margin: 42px 0 0;
+    }
   }
 
   &__item {
