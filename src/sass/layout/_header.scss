@@ -2,6 +2,11 @@
   padding-bottom: 15px;
   background-color: var(--light-bg);
 
+  @include mq(large) {
+    margin-top: 10vh;
+    display: flex;
+  }
+
   &__leftSide,
   &__rightSide {
     height: 60vh;
@@ -9,6 +14,11 @@
 
     @include mq(small) {
       height: 100vh;
+    }
+
+    @include mq(large) {
+      height: 90vh;
+      width: 50vw;
     }
   }
 
@@ -22,7 +32,12 @@
     @include mq(small) {
       height: 142vh;
     }
+
+    @include mq(large) {
+      height: 90vh;
+    }
   }
+
   &__profileImage {
     height: 60vh;
     width: 100vw;
@@ -32,7 +47,13 @@
     @include mq(small) {
       height: 100vh;
     }
+
+    @include mq(large) {
+      height: 90vh;
+      width: 50vw;
+    }
   }
+
   &__leftSideTitle,
   &__rightSideTitle {
     width: 100vw;
@@ -40,26 +61,62 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    @include mq(large) {
+      width: 20vw;
+      margin-right: 50px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
   }
+
   &__leftSideTitle {
     position: absolute;
     top: 85%;
-    left: 50%;
+    right: 50%;
     transform: translate(-50%, -50%);
+
+    @include mq(large) {
+      width: 20vw;
+      margin-right: 50px;
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translate(0, -50%);
+      text-align: end;
+    }
   }
+
+  &__rightSideTitle {
+    margin: 13px 0 20px;
+
+    @include mq(large) {
+      margin: 0 50px 0;
+    }
+  }
+
   &__title {
     font-size: 3rem;
+
+    @include mq(large) {
+      font-size: 5.2rem;
+    }
   }
+
   &__icon {
     @include icon;
 
     &--bottom {
       margin: 0 0 10px;
+
+      @include mq(large) {
+        margin: 0;
+        left: 0;
+      }
     }
   }
-  &__rightSideTitle {
-    margin: 13px 0 20px;
-  }
+
   &__rightBackground {
     margin: 0 10vw;
     display: grid;
@@ -71,7 +128,13 @@
       margin: 0 5vw;
       grid-template: repeat(3, calc(100vh / 3)) / repeat(3, 30vw);
     }
+
+    @include mq(large) {
+      margin: 15vh 5vw;
+      grid-template: repeat(3, calc(60vh / 3)) / repeat(3, calc(40vw / 3));
+    }
   }
+
   &__skillContainer {
     display: flex;
     flex-direction: column;
@@ -79,12 +142,19 @@
     align-items: center;
     opacity: 5%;
   }
+
   &__iconBg {
     height: 11vw;
     width: 11vw;
     margin-bottom: 5px;
     object-fit: fill;
+
+    @include mq(large) {
+      height: 7vw;
+      width: 7vw;
+    }
   }
+
   &__skillName {
     font-size: 1.1rem;
     font-weight: 700;
