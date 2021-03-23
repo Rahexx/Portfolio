@@ -90,6 +90,10 @@
     @include mq(small) {
       grid-template: repeat(3, calc(80vh / 3)) / repeat(3, 27vw);
     }
+
+    @include mq(medium) {
+      grid-template: repeat(3, calc(80vh / 3)) / repeat(3, 20vw);
+    }
   }
 
   &__skillIcon {

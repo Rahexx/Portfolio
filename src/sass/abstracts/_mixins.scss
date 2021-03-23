@@ -9,6 +9,10 @@
   font-size: 2.7rem;
   margin-top: 19px;
   color: black;
+
+  @include mq(medium) {
+    font-size: 3.2rem;
+  }
 }
 
 @mixin separator {
