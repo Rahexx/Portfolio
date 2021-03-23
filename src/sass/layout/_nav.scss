@@ -14,6 +14,13 @@
     padding: 37px 73px;
   }
 
+  @include mq(large) {
+    height: 10vh;
+    display: flex;
+    flex-direction: row-reverse;
+    transform: translateX(0);
+  }
+
   &__themeMode {
     height: 29px;
     width: 30vw;
@@ -33,6 +40,13 @@
       width: 12vw;
     }
 
+    @include mq(large) {
+      height: 37px;
+      width: 123px;
+      padding: 0 12px;
+      border: 3px solid white;
+    }
+
     &::after {
       content: '';
       display: block;
@@ -43,6 +57,12 @@
       left: 4px;
       border-radius: 50px;
       background-color: white;
+
+      @include mq(large) {
+        height: 27px;
+        width: 27px;
+        left: 6px;
+      }
     }
   }
 
@@ -50,6 +70,10 @@
     height: 20px;
     width: 20px;
     color: #c5f81a;
+
+    @include mq(large) {
+      font-size: 2rem;
+    }
   }
 
   &__list {
@@ -69,6 +93,14 @@
     @include mq(medium) {
       width: 20vw;
     }
+
+    @include mq(large) {
+      height: 100%;
+      width: 75vw;
+      margin: 0;
+      flex-direction: row;
+      align-items: center;
+    }
   }
 
   &__item {
@@ -77,6 +109,12 @@
     font-weight: 600;
     color: black;
     text-transform: uppercase;
+
+    @include mq(large) {
+      font-size: 2.2rem;
+      font-weight: 500;
+      cursor: pointer;
+    }
 
     &--active::after {
       content: '';
@@ -89,6 +127,10 @@
       background-color: black;
       border-radius: 50px;
       transform: translate(-50%, -50%);
+
+      @include mq(large) {
+        display: none;
+      }
     }
   }
 }
