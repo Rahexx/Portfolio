@@ -34,9 +34,10 @@
 
   @include mq(large) {
     height: 75%;
-    width: 2px;
+    width: 5px;
     bottom: 12.5%;
     right: 0;
+    transform: translateX(50%);
   }
 }
 
@@ -47,6 +48,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  @include mq(large) {
+    width: 50vw;
+  }
 }
 
 @mixin skillIcon($height, $width) {
