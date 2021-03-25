@@ -20,6 +20,10 @@
     bottom: -110px;
     font-size: 6.2rem;
   }
+
+  @include mq(large) {
+    font-size: 6.7rem;
+  }
 }
 
 @mixin separator {

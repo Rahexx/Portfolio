@@ -89,6 +89,10 @@
       width: 418px;
       margin-top: 90px;
     }
+
+    @include mq(extra-large) {
+      transform: translateX(10vh);
+    }
   }
 
   &__icon {
@@ -140,6 +144,10 @@
       font-size: 4.7rem;
       text-align: start;
     }
+
+    @include mq(extra-large) {
+      font-size: 5.6rem;
+    }
   }
 
   &__text {
@@ -151,6 +159,12 @@
       padding: 12px 42px 12px 92px;
       font-size: 2.3rem;
       line-height: 28px;
+    }
+
+    @include mq(large) {
+      padding: 12px 33% 12px 92px;
+      font-size: 2.8rem;
+      line-height: 35px;
     }
   }
 
@@ -176,6 +190,11 @@
     @include mq(large) {
       margin: 0 0 0 94px;
       grid-template: repeat(3, calc(50vh / 3)) / repeat(3, calc(46vw / 3));
+    }
+
+    @include mq(extra-large) {
+      margin: 0 0 0 -94px;
+      grid-template: repeat(3, calc(50vh / 3)) / repeat(3, calc(35vw / 3));
     }
   }
 
@@ -232,6 +251,11 @@
       right: calc(50% + 70px);
       transform: translateX(0);
     }
+
+    @include mq(extra-large) {
+      height: 377px;
+      width: 710px;
+    }
   }
 
   &__listTechnology {
@@ -268,6 +292,10 @@
       @include mq(large) {
         padding-right: 92px;
         text-align: end;
+      }
+
+      @include mq(extra-large) {
+        padding-left: 33%;
       }
     }
 

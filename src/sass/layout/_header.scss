@@ -102,6 +102,10 @@
     @include mq(large) {
       font-size: 7.2rem;
     }
+
+    @include mq(large) {
+      font-size: 8.2rem;
+    }
   }
 
   &__icon {
