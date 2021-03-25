@@ -183,7 +183,6 @@
     &:nth-child(1),
     &:nth-child(4) {
       @include skillIcon(48px, 41px);
-
       @include mq(large) {
         @include skillIcon(96px, 82px);
       }
@@ -192,16 +191,28 @@
     &:nth-child(3),
     &:nth-child(5),
     &:nth-child(9) {
-      @include skillIcon(96px, 96px);
+      @include skillIcon(48px, 48px);
+      @include mq(large) {
+        @include skillIcon(96px, 96px);
+      }
     }
     &:nth-child(6) {
-      @include skillIcon(96px, 110px);
+      @include skillIcon(48px, 55px);
+      @include mq(large) {
+        @include skillIcon(96px, 110px);
+      }
     }
     &:nth-child(7) {
-      @include skillIcon(96px, 128px);
+      @include skillIcon(48px, 64px);
+      @include mq(large) {
+        @include skillIcon(96px, 128px);
+      }
     }
     &:nth-child(8) {
-      @include skillIcon(96px, 80px);
+      @include skillIcon(48px, 40px);
+      @include mq(large) {
+        @include skillIcon(96px, 80px);
+      }
     }
   }
 
@@ -239,11 +250,15 @@
   }
 
   &__contact {
-    width: 100%;
     margin-bottom: 20px;
-    padding-left: 92px;
-    font-size: 2.3rem;
-    text-align: start;
+
+    @include mq(large) {
+      width: 100%;
+      margin-bottom: 20px;
+      padding-left: 92px;
+      font-size: 2.3rem;
+      text-align: start;
+    }
   }
 }
 
