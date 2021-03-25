@@ -12,6 +12,10 @@
     height: 15vw;
   }
 
+  @include mq(large) {
+    height: 10vh;
+  }
+
   &::before {
     content: '';
     display: block;
@@ -26,5 +30,9 @@
   &__info {
     font-size: 1.4rem;
     color: rgba(0, 0, 0, 0.6);
+
+    @include mq(large) {
+      font-size: 1.6rem;
+    }
   }
 }
