@@ -92,7 +92,7 @@ const changeTheme = () => {
     if (theme.active === theme.lightTheme) {
       theme.active = theme.darkTheme;
       themeCircle.style.transform = `translateX(${
-        themePanelWidth - 4 - themeCircleWidth * 1.75
+        themePanelWidth - 4 - themeCircleWidth * 1.66
       }px)`;
       setDarkTheme();
     } else {

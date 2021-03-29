@@ -24,10 +24,12 @@
     }
 
     & .hamburger__inner::before {
+      transition: 0.5s;
       transform: translateY(-10px) rotate(45deg);
     }
 
     & .hamburger__inner::after {
+      transition: 0.5s;
       transform: translateY(10px) rotate(-45deg);
     }
   }
