@@ -6,7 +6,7 @@
   top: 0;
   left: 0;
   z-index: 2;
-  background-color: #6abefc;
+  background-color: var(--color-nav);
   transform: translateX(-100vw);
   transition: 0.5s;
 
@@ -46,24 +46,26 @@
       width: 123px;
       padding: 0 12px;
       border: 3px solid white;
+      cursor: pointer;
     }
+  }
 
-    &::after {
-      content: '';
-      display: block;
-      height: 21px;
-      width: 21px;
-      position: absolute;
-      top: 2px;
-      left: 4px;
-      border-radius: 50px;
-      background-color: white;
+  &__themeCircle {
+    content: '';
+    display: block;
+    height: 21px;
+    width: 21px;
+    position: absolute;
+    top: 2px;
+    left: 4px;
+    border-radius: 50px;
+    background-color: white;
+    transition: 0.3s;
 
-      @include mq(large) {
-        height: 27px;
-        width: 27px;
-        left: 6px;
-      }
+    @include mq(large) {
+      height: 27px;
+      width: 27px;
+      left: 6px;
     }
   }
 
@@ -113,7 +115,7 @@
     width: 100%;
     position: relative;
     font-weight: 600;
-    color: black;
+    color: var(--color-text);
     text-transform: uppercase;
 
     @include mq(large) {
@@ -136,7 +138,7 @@
       position: absolute;
       top: 50%;
       right: 0%;
-      background-color: black;
+      background-color: var(--color-text);
       border-radius: 50px;
       transform: translate(-50%, -50%);
 
@@ -156,7 +158,7 @@
       position: absolute;
       bottom: -25px;
       left: calc(25% / 2 - 7.5);
-      background-color: black;
+      background-color: var(--color-text);
       border-radius: 50px;
       z-index: 3;
       transition: 0.8s;

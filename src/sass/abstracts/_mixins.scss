@@ -1,14 +1,14 @@
 @mixin hamburger-line {
   width: 100%;
   height: 3px;
-  background-color: var(--light-bg);
+  background-color: var(--color-bg);
   position: absolute;
 }
 
 @mixin icon {
   font-size: 2.7rem;
   margin-top: 19px;
-  color: black;
+  color: var(--color-text);
 
   @include mq(medium) {
     font-size: 3.2rem;
@@ -34,7 +34,7 @@
   position: absolute;
   bottom: -1px;
   right: calc(25vw / 2);
-  background-color: black;
+  background-color: var(--color-text);
 
   @include mq(large) {
     height: 75%;

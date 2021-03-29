@@ -1,6 +1,6 @@
 .header {
   padding-bottom: 15px;
-  background-color: var(--light-bg);
+  background-color: var(--color-bg);
 
   @include mq(large) {
     margin-top: 10vh;
@@ -61,6 +61,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    color: var(--color-text);
 
     @include mq(large) {
       width: 20vw;
