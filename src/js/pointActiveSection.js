@@ -1,22 +1,31 @@
 const navDot = document.querySelector('.nav__pointActive');
 let widthItem;
 
-const howFarMove = (index) => {
-  if (index === 0) {
+const howFarMove = (index, screenSize = 'small') => {
+  if (index === 0 && screenSize === 'small') {
     return widthItem / 2 - 7.5;
+  } else if (index === 0 && screenSize === 'large') {
+    return widthItem / 2;
+  } else if (index >= 0 && screenSize === 'large') {
+    return widthItem / 2 + (widthItem / 2) * (index * 2) - 7.5;
+  } else if (index >= 0 && screenSize === 'small') {
+    return widthItem / 2 + widthItem * index - 15 * (index + 1) * 1.2;
   }
-  return widthItem / 2 + widthItem * index - 15 * (index + 1) * 1.2;
 };
 
 const initNavDotPositionSmall = () => {
   navDot.style.left = `${howFarMove(0)}px`;
 };
 
-const hoverEvent = (index) => {
-  navDot.style.left = `${howFarMove(index)}px`;
+const initNavDotPositionLarge = () => {
+  navDot.style.left = `${howFarMove(0, 'large')}px`;
 };
 
-const addListenWindow = () => {
+const hoverEvent = (index, screenSize = 'small') => {
+  navDot.style.left = `${howFarMove(index, screenSize)}px`;
+};
+
+const addListenWindow = (screenSize) => {
   const skillSection = document.querySelector('.section:nth-child(2)');
   const projectSection = document.querySelector('.section:nth-child(3)');
   const contactSection = document.querySelector('.section:nth-child(6)');
@@ -29,20 +38,22 @@ const addListenWindow = () => {
   const heightSection = skillRect.height;
 
   window.addEventListener('scroll', () => {
+    const size = screenSize ? 'small' : 'large';
+
     if (window.pageYOffset < skillOffsetTop - heightSection / 2) {
-      hoverEvent(0);
+      hoverEvent(0, size);
     } else if (
-      window.pageYOffset >= skillOffsetTop - heightSection / 2
-      && window.pageYOffset < projectOffsetTop - heightSection / 2
+      window.pageYOffset >= skillOffsetTop - heightSection / 2 &&
+      window.pageYOffset < projectOffsetTop - heightSection / 2
     ) {
-      hoverEvent(1);
+      hoverEvent(1, size);
     } else if (
-      window.pageYOffset >= projectOffsetTop - heightSection / 2
-      && window.pageYOffset < contactOffsetTop - heightSection / 2
+      window.pageYOffset >= projectOffsetTop - heightSection / 2 &&
+      window.pageYOffset < contactOffsetTop - heightSection / 2
     ) {
-      hoverEvent(2);
+      hoverEvent(2, size);
     } else if (window.pageYOffset >= contactOffsetTop - heightSection) {
-      hoverEvent(3);
+      hoverEvent(3, size);
     }
   });
 };
@@ -51,21 +62,32 @@ const pointActiveSection = () => {
   const navItems = document.querySelectorAll('.nav__item');
   const rect = navItems[0].getBoundingClientRect();
   const screenWidth = window.innerWidth;
+  const screenSize = screenWidth < 2000;
   widthItem = rect.width;
 
-  if (screenWidth < 2000) {
+  if (screenSize) {
     initNavDotPositionSmall();
+  } else {
+    initNavDotPositionLarge();
   }
 
   [...navItems].map((item, index) => {
     item.addEventListener('mouseover', () => {
-      hoverEvent(index);
+      if (screenSize) {
+        hoverEvent(index);
+      } else {
+        hoverEvent(index, 'large');
+      }
     });
 
-    item.addEventListener('mouseout', initNavDotPositionSmall);
+    if (screenSize) {
+      item.addEventListener('mouseout', initNavDotPositionSmall);
+    } else {
+      item.addEventListener('mouseout', initNavDotPositionLarge);
+    }
   });
 
-  addListenWindow();
+  addListenWindow(screenSize);
 };
 
 export default pointActiveSection;
