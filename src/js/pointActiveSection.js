@@ -4,11 +4,11 @@ let widthItem;
 const howFarMove = (index, screenSize = 'small') => {
   if (index === 0 && screenSize === 'small') {
     return widthItem / 2 - 7.5;
-  } else if (index === 0 && screenSize === 'large') {
+  } if (index === 0 && screenSize === 'large') {
     return widthItem / 2;
-  } else if (index >= 0 && screenSize === 'large') {
+  } if (index >= 0 && screenSize === 'large') {
     return widthItem / 2 + (widthItem / 2) * (index * 2) - 7.5;
-  } else if (index >= 0 && screenSize === 'small') {
+  } if (index >= 0 && screenSize === 'small') {
     return widthItem / 2 + widthItem * index - 15 * (index + 1) * 1.2;
   }
 };
@@ -43,13 +43,13 @@ const addListenWindow = (screenSize) => {
     if (window.pageYOffset < skillOffsetTop - heightSection / 2) {
       hoverEvent(0, size);
     } else if (
-      window.pageYOffset >= skillOffsetTop - heightSection / 2 &&
-      window.pageYOffset < projectOffsetTop - heightSection / 2
+      window.pageYOffset >= skillOffsetTop - heightSection / 2
+      && window.pageYOffset < projectOffsetTop - heightSection / 2
     ) {
       hoverEvent(1, size);
     } else if (
-      window.pageYOffset >= projectOffsetTop - heightSection / 2 &&
-      window.pageYOffset < contactOffsetTop - heightSection / 2
+      window.pageYOffset >= projectOffsetTop - heightSection / 2
+      && window.pageYOffset < contactOffsetTop - heightSection / 2
     ) {
       hoverEvent(2, size);
     } else if (window.pageYOffset >= contactOffsetTop - heightSection) {
@@ -83,13 +83,13 @@ const deleteListeners = () => {
     if (window.pageYOffset < skillOffsetTop - heightSection / 2) {
       hoverEvent(0, size);
     } else if (
-      window.pageYOffset >= skillOffsetTop - heightSection / 2 &&
-      window.pageYOffset < projectOffsetTop - heightSection / 2
+      window.pageYOffset >= skillOffsetTop - heightSection / 2
+      && window.pageYOffset < projectOffsetTop - heightSection / 2
     ) {
       hoverEvent(1, size);
     } else if (
-      window.pageYOffset >= projectOffsetTop - heightSection / 2 &&
-      window.pageYOffset < contactOffsetTop - heightSection / 2
+      window.pageYOffset >= projectOffsetTop - heightSection / 2
+      && window.pageYOffset < contactOffsetTop - heightSection / 2
     ) {
       hoverEvent(2, size);
     } else if (window.pageYOffset >= contactOffsetTop - heightSection) {
@@ -105,7 +105,7 @@ const pointActiveSection = () => {
   const rect = navItems[0].getBoundingClientRect();
   const screenWidth = window.innerWidth;
   const screenSize = screenWidth < 2000;
-  let resizeTimer = undefined;
+  let resizeTimer;
   widthItem = rect.width;
 
   if (screenSize) {
