@@ -97,7 +97,7 @@ const changeTheme = () => {
       setDarkTheme();
     } else {
       theme.active = theme.lightTheme;
-      themeCircle.style.transform = `translateX(0px)`;
+      themeCircle.style.transform = 'translateX(0px)';
       setLightTheme();
     }
   });
