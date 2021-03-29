@@ -20,6 +20,12 @@ const goToSection = () => {
 
   [...navList].map((item, index) => {
     item.addEventListener('click', () => {
+      [...navList].map((navItem) => {
+        navItem.classList.remove('nav__item--active');
+      });
+
+      item.classList.add('nav__item--active');
+
       if (index === 0) {
         scrollToSection(0);
       } else if (index === 1) {
