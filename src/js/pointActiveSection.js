@@ -4,25 +4,36 @@ let resizeTimer;
 
 const howFarMove = (index, screenSize = 'small') => {
   if (index === 0 && screenSize === 'small') {
-    return widthItem / 2 - 7.5;
+    return widthItem / 2;
   } else if (index === 0 && screenSize === 'large') {
     return widthItem / 2;
   } else if (index >= 0 && screenSize === 'large') {
     return widthItem / 2 + (widthItem / 2) * (index * 2) - 7.5;
   } else if (index >= 0 && screenSize === 'small') {
-    return widthItem / 2 + widthItem * index - 15 * (index + 1) * 1.2;
+    return widthItem / 2 + widthItem * index;
   }
+};
+
+const invokeScroll = () => {
+  window.scroll({
+    top: window.scrollY - 1,
+    left: 0,
+    behavior: 'smooth',
+  });
 };
 
 const initNavDotPositionSmall = () => {
   navDot.style.left = `${howFarMove(0)}px`;
+  invokeScroll();
 };
 
 const initNavDotPositionLarge = () => {
   navDot.style.left = `${howFarMove(0, 'large')}px`;
+  invokeScroll();
 };
 
 const hoverEvent = (index, screenSize = 'small') => {
+  console.log(screenSize);
   navDot.style.left = `${howFarMove(index, screenSize)}px`;
 };
 
@@ -65,7 +76,7 @@ const pointActiveSection = () => {
   const navItems = document.querySelectorAll('.nav__item');
   const rect = navItems[0].getBoundingClientRect();
   const screenWidth = window.innerWidth;
-  const screenSize = screenWidth < 2000;
+  const screenSize = screenWidth < 1600;
   widthItem = rect.width;
 
   if (screenSize) {
