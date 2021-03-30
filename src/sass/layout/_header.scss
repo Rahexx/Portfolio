@@ -121,6 +121,11 @@
 
   &__icon {
     @include icon;
+    transition: 0.5s;
+
+    &:hover {
+      color: var(--color-hover);
+    }
 
     &--bottom {
       margin: 0 0 10px;
