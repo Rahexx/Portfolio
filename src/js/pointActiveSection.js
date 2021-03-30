@@ -4,11 +4,11 @@ let widthItem;
 const howFarMove = (index, screenSize = 'small') => {
   if (index === 0 && screenSize === 'small') {
     return widthItem / 2 - 7.5;
-  } if (index === 0 && screenSize === 'large') {
+  } else if (index === 0 && screenSize === 'large') {
     return widthItem / 2;
-  } if (index >= 0 && screenSize === 'large') {
+  } else if (index >= 0 && screenSize === 'large') {
     return widthItem / 2 + (widthItem / 2) * (index * 2) - 7.5;
-  } if (index >= 0 && screenSize === 'small') {
+  } else if (index >= 0 && screenSize === 'small') {
     return widthItem / 2 + widthItem * index - 15 * (index + 1) * 1.2;
   }
 };
@@ -25,7 +25,7 @@ const hoverEvent = (index, screenSize = 'small') => {
   navDot.style.left = `${howFarMove(index, screenSize)}px`;
 };
 
-const addListenWindow = (screenSize) => {
+const addListenWindow = () => {
   const skillSection = document.querySelector('.section:nth-child(2)');
   const projectSection = document.querySelector('.section:nth-child(3)');
   const contactSection = document.querySelector('.section:nth-child(6)');
@@ -36,6 +36,8 @@ const addListenWindow = (screenSize) => {
   const projectOffsetTop = projectRect.y;
   const contactOffsetTop = contactRect.y;
   const heightSection = skillRect.height;
+  const screenWidth = window.innerWidth;
+  const screenSize = screenWidth < 2000;
 
   window.addEventListener('scroll', () => {
     const size = screenSize ? 'small' : 'large';
@@ -43,13 +45,13 @@ const addListenWindow = (screenSize) => {
     if (window.pageYOffset < skillOffsetTop - heightSection / 2) {
       hoverEvent(0, size);
     } else if (
-      window.pageYOffset >= skillOffsetTop - heightSection / 2
-      && window.pageYOffset < projectOffsetTop - heightSection / 2
+      window.pageYOffset >= skillOffsetTop - heightSection / 2 &&
+      window.pageYOffset < projectOffsetTop - heightSection / 2
     ) {
       hoverEvent(1, size);
     } else if (
-      window.pageYOffset >= projectOffsetTop - heightSection / 2
-      && window.pageYOffset < contactOffsetTop - heightSection / 2
+      window.pageYOffset >= projectOffsetTop - heightSection / 2 &&
+      window.pageYOffset < contactOffsetTop - heightSection / 2
     ) {
       hoverEvent(2, size);
     } else if (window.pageYOffset >= contactOffsetTop - heightSection) {
@@ -83,13 +85,13 @@ const deleteListeners = () => {
     if (window.pageYOffset < skillOffsetTop - heightSection / 2) {
       hoverEvent(0, size);
     } else if (
-      window.pageYOffset >= skillOffsetTop - heightSection / 2
-      && window.pageYOffset < projectOffsetTop - heightSection / 2
+      window.pageYOffset >= skillOffsetTop - heightSection / 2 &&
+      window.pageYOffset < projectOffsetTop - heightSection / 2
     ) {
       hoverEvent(1, size);
     } else if (
-      window.pageYOffset >= projectOffsetTop - heightSection / 2
-      && window.pageYOffset < contactOffsetTop - heightSection / 2
+      window.pageYOffset >= projectOffsetTop - heightSection / 2 &&
+      window.pageYOffset < contactOffsetTop - heightSection / 2
     ) {
       hoverEvent(2, size);
     } else if (window.pageYOffset >= contactOffsetTop - heightSection) {
