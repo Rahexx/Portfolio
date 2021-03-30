@@ -75,8 +75,20 @@ const deleteListeners = () => {
   const screenWidth = window.innerWidth;
   const screenSize = screenWidth < 2000;
 
-  [...navItems].map((item) => {
-    item.replaceWith(item.cloneNode(true));
+  [...navItems].map((item, index) => {
+    item.removeEventListener('mouseover', () => {
+      if (screenSize) {
+        hoverEvent(index);
+      } else {
+        hoverEvent(index, 'large');
+      }
+    });
+
+    if (screenSize) {
+      item.removeEventListener('mouseout', initNavDotPositionSmall);
+    } else {
+      item.removeEventListener('mouseout', initNavDotPositionLarge);
+    }
   });
 
   window.removeEventListener('scroll', () => {
