@@ -75,8 +75,8 @@
   &__leftSideTitle {
     position: absolute;
     top: 85%;
-    right: 50%;
-    transform: translate(-50%, -50%);
+    right: 0;
+    transform: translateY(-50%);
 
     @include mq(large) {
       width: 20vw;
