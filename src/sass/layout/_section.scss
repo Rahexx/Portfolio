@@ -27,7 +27,7 @@
     align-items: center;
 
     &:nth-last-child(1) {
-      height: 100vh;
+      height: 130vh;
     }
 
     &::after {
@@ -46,7 +46,7 @@
     }
 
     @include mq(large) {
-      height: 100vh;
+      height: 130vh;
     }
   }
 
