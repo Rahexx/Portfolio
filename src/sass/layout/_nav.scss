@@ -24,12 +24,13 @@
 
   @include mq(extra-large) {
     height: 10vh;
+    justify-content: center;
   }
 
   &__themeMode {
     height: 29px;
     width: 30vw;
-    border: 2px solid white;
+    border: 1px solid var(--color-text);
     padding: 0 7px;
     position: relative;
     display: flex;
@@ -49,8 +50,15 @@
       height: 32px;
       width: 100px;
       padding: 0 12px;
-      border: 3px solid white;
+      border: 3px solid var(--color-text);
       cursor: pointer;
+    }
+
+    @include mq(extra-large) {
+      position: absolute;
+      top: 50%;
+      right: 100px;
+      transform: translateY(-50%);
     }
   }
 
@@ -63,7 +71,7 @@
     top: 2px;
     left: 4px;
     border-radius: 50px;
-    background-color: white;
+    background-color: var(--color-text);
     transition: 0.3s;
 
     @include mq(large) {
@@ -76,7 +84,7 @@
   &__theme {
     height: 20px;
     width: 20px;
-    color: #c5f81a;
+    color: var(--color-text);
 
     @include mq(large) {
       font-size: 1.6rem;
@@ -169,7 +177,7 @@
       background-color: var(--color-text);
       border-radius: 50%;
       z-index: 3;
-      transition: 0.8s;
+      transition: 0.3s;
     }
 
     @include mq(extra-large) {
