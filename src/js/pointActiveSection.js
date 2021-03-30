@@ -1,5 +1,6 @@
 const navDot = document.querySelector('.nav__pointActive');
 let widthItem;
+let resizeTimer;
 
 const howFarMove = (index, screenSize = 'small') => {
   if (index === 0 && screenSize === 'small') {
@@ -36,10 +37,10 @@ const addListenWindow = () => {
   const projectOffsetTop = projectRect.y;
   const contactOffsetTop = contactRect.y;
   const heightSection = skillRect.height;
-  const screenWidth = window.innerWidth;
-  const screenSize = screenWidth < 2000;
 
   window.addEventListener('scroll', () => {
+    const screenWidth = window.innerWidth;
+    const screenSize = screenWidth < 2000;
     const size = screenSize ? 'small' : 'large';
 
     if (window.pageYOffset < skillOffsetTop - heightSection / 2) {
@@ -58,6 +59,38 @@ const addListenWindow = () => {
       hoverEvent(3, size);
     }
   });
+};
+
+const pointActiveSection = () => {
+  const navItems = document.querySelectorAll('.nav__item');
+  const rect = navItems[0].getBoundingClientRect();
+  const screenWidth = window.innerWidth;
+  const screenSize = screenWidth < 2000;
+  widthItem = rect.width;
+
+  if (screenSize) {
+    initNavDotPositionSmall();
+  } else {
+    initNavDotPositionLarge();
+  }
+
+  [...navItems].map((item, index) => {
+    item.addEventListener('mouseover', () => {
+      if (screenSize) {
+        hoverEvent(index);
+      } else {
+        hoverEvent(index, 'large');
+      }
+    });
+
+    if (screenSize) {
+      item.addEventListener('mouseout', initNavDotPositionSmall);
+    } else {
+      item.addEventListener('mouseout', initNavDotPositionLarge);
+    }
+  });
+
+  addListenWindow();
 };
 
 const deleteListeners = () => {
@@ -114,45 +147,12 @@ const deleteListeners = () => {
   pointActiveSection();
 };
 
-const pointActiveSection = () => {
-  const navItems = document.querySelectorAll('.nav__item');
-  const rect = navItems[0].getBoundingClientRect();
-  const screenWidth = window.innerWidth;
-  const screenSize = screenWidth < 2000;
-  let resizeTimer;
-  widthItem = rect.width;
+window.addEventListener('resize', () => {
+  clearTimeout(resizeTimer);
 
-  if (screenSize) {
-    initNavDotPositionSmall();
-  } else {
-    initNavDotPositionLarge();
-  }
-
-  [...navItems].map((item, index) => {
-    item.addEventListener('mouseover', () => {
-      if (screenSize) {
-        hoverEvent(index);
-      } else {
-        hoverEvent(index, 'large');
-      }
-    });
-
-    if (screenSize) {
-      item.addEventListener('mouseout', initNavDotPositionSmall);
-    } else {
-      item.addEventListener('mouseout', initNavDotPositionLarge);
-    }
-  });
-
-  addListenWindow();
-
-  window.addEventListener('resize', () => {
-    clearTimeout(resizeTimer);
-
-    resizeTimer = setTimeout(() => {
-      deleteListeners();
-    }, 200);
-  });
-};
+  resizeTimer = setTimeout(() => {
+    deleteListeners();
+  }, 200);
+});
 
 export default pointActiveSection;
