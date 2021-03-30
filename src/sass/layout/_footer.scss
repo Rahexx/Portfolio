@@ -24,15 +24,16 @@
     left: 5vw;
     height: 2px;
     width: 90vw;
-    background-color: var(--color-footerBefore);
+    background-color: var(--color-text);
   }
 
   &__info {
     font-size: 1.4rem;
-    color: var(--color-footerInfo);
+    color: var(--color-text);
 
     @include mq(large) {
-      font-size: 1.6rem;
+      font-size: 1.9rem;
+      font-weight: 600;
     }
   }
 }
