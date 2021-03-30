@@ -36,6 +36,14 @@
       left: 50%;
       transform: translateX(-50%);
     }
+
+    @include mq(extra-large) {
+      height: 130vh;
+
+      &:nth-last-child(1) {
+        height: 130vh;
+      }
+    }
   }
 
   &--project {
@@ -50,7 +58,7 @@
     }
 
     @include mq(extra-large) {
-      height: 130vh;
+      height: 115vh;
     }
   }
 
@@ -104,10 +112,15 @@
 
   &__icon {
     @include icon;
+    transition: 0.5s;
 
     @include mq(large) {
       right: 55%;
       bottom: 20%;
+
+      &:hover {
+        color: var(--color-hover);
+      }
     }
 
     &--bottom {
