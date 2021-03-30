@@ -1,6 +1,7 @@
 const navDot = document.querySelector('.nav__pointActive');
 let widthItem;
 let resizeTimer;
+let active = 0;
 
 const howFarMove = (index, screenSize = 'small') => {
   if (index === 0 && screenSize === 'small') {
@@ -15,25 +16,26 @@ const howFarMove = (index, screenSize = 'small') => {
 };
 
 const invokeScroll = () => {
-  window.scroll({
-    top: window.scrollY - 1,
-    left: 0,
-    behavior: 'smooth',
-  });
+  setTimeout(() => {
+    window.scroll({
+      top: window.scrollY,
+      left: 0,
+      behavior: 'smooth',
+    });
+  }, 300);
 };
 
 const initNavDotPositionSmall = () => {
-  navDot.style.left = `${howFarMove(0)}px`;
+  navDot.style.left = `${howFarMove(active)}px`;
   invokeScroll();
 };
 
 const initNavDotPositionLarge = () => {
-  navDot.style.left = `${howFarMove(0, 'large')}px`;
+  navDot.style.left = `${howFarMove(active, 'large')}px`;
   invokeScroll();
 };
 
 const hoverEvent = (index, screenSize = 'small') => {
-  console.log(screenSize);
   navDot.style.left = `${howFarMove(index, screenSize)}px`;
 };
 
@@ -56,18 +58,22 @@ const addListenWindow = () => {
 
     if (window.pageYOffset < skillOffsetTop - heightSection / 2) {
       hoverEvent(0, size);
+      active = 0;
     } else if (
       window.pageYOffset >= skillOffsetTop - heightSection / 2 &&
       window.pageYOffset < projectOffsetTop - heightSection / 2
     ) {
       hoverEvent(1, size);
+      active = 1;
     } else if (
       window.pageYOffset >= projectOffsetTop - heightSection / 2 &&
       window.pageYOffset < contactOffsetTop - heightSection / 2
     ) {
       hoverEvent(2, size);
+      active = 2;
     } else if (window.pageYOffset >= contactOffsetTop - heightSection) {
       hoverEvent(3, size);
+      active = 3;
     }
   });
 };
@@ -165,5 +171,23 @@ window.addEventListener('resize', () => {
     deleteListeners();
   }, 200);
 });
+
+const refreshPage = () => {
+  const screenWidth = window.innerWidth;
+  const screenSize = screenWidth < 1600;
+
+  if (screenSize) {
+    initNavDotPositionSmall();
+  } else {
+    initNavDotPositionLarge();
+  }
+
+  window.scroll({
+    top: 0,
+    left: 0,
+  });
+};
+
+window.onbeforeunload = refreshPage;
 
 export default pointActiveSection;

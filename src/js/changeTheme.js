@@ -102,14 +102,17 @@ const setLightTheme = () => {
 const changeTheme = () => {
   const themePanel = document.querySelector('.nav__themeMode');
   const themeCircle = document.querySelector('.nav__themeCircle');
-  const themePanelWidth = themePanel.offsetWidth;
-  const themeCircleWidth = themeCircle.offsetWidth;
 
   themePanel.addEventListener('click', () => {
+    const themePanelWidth = themePanel.offsetWidth;
+    const themeCircleWidth = themeCircle.offsetWidth;
+    const screenWidth = window.innerWidth;
+    const movePx = screenWidth < 1024 ? 9 : 0;
+
     if (theme.active === theme.lightTheme) {
       theme.active = theme.darkTheme;
       themeCircle.style.transform = `translateX(${
-        themePanelWidth - 4 - themeCircleWidth * 1.66
+        themePanelWidth - 4 - themeCircleWidth * 2 + movePx
       }px)`;
       setDarkTheme();
     } else {

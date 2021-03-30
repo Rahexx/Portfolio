@@ -46,8 +46,8 @@
     }
 
     @include mq(large) {
-      height: 37px;
-      width: 123px;
+      height: 32px;
+      width: 100px;
       padding: 0 12px;
       border: 3px solid white;
       cursor: pointer;
@@ -67,9 +67,9 @@
     transition: 0.3s;
 
     @include mq(large) {
-      height: 27px;
-      width: 27px;
-      left: 6px;
+      height: 22px;
+      width: 22px;
+      left: 9px;
     }
   }
 
@@ -79,7 +79,11 @@
     color: #c5f81a;
 
     @include mq(large) {
-      font-size: 2rem;
+      font-size: 1.6rem;
+    }
+
+    @include mq(extra-large) {
+      font-size: 1.8rem;
     }
   }
 
