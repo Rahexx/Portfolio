@@ -50,7 +50,7 @@ const setDarkTheme = () => {
   root.style.setProperty('--color-nav', '#143A5A');
   root.style.setProperty('--color-text', '#ffffff');
   root.style.setProperty('--color-footerBefore', 'rgba(255, 255, 255, 0.3)');
-  root.style.setProperty('--color-footerInfo', 'rgba(255, 255, 255, 0.6)');
+  root.style.setProperty('--color-hover', '#6b3414');
 
   skillCssIcon.src = cssWhite;
   bgCssIcon.src = cssWhite;
@@ -77,7 +77,7 @@ const setLightTheme = () => {
   root.style.setProperty('--color-nav', '#6abefc');
   root.style.setProperty('--color-text', '#000000');
   root.style.setProperty('--color-footerBefore', 'rgba(0, 0, 0, 0.3)');
-  root.style.setProperty('--color-footerInfo', 'rgba(0, 0, 0, 0.3)');
+  root.style.setProperty('--color-hover', '#c55822');
 
   skillCssIcon.src = cssHeader;
   bgCssIcon.src = cssHeader;
