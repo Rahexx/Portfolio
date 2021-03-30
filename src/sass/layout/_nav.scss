@@ -15,11 +15,15 @@
   }
 
   @include mq(large) {
-    height: 10vh;
+    height: 12vh;
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
     transform: translateX(0);
+  }
+
+  @include mq(extra-large) {
+    height: 10vh;
   }
 
   &__themeMode {
@@ -119,14 +123,14 @@
     text-transform: uppercase;
 
     @include mq(large) {
-      font-size: 2.2rem;
+      font-size: 2rem;
       font-weight: 500;
       cursor: pointer;
       text-align: center;
       transition: 0.3s;
 
       &:hover {
-        font-size: 2.6rem;
+        font-size: 2.4rem;
       }
     }
 
@@ -152,16 +156,21 @@
     display: none;
 
     @include mq(large) {
-      height: 15px;
-      width: 15px;
+      height: 10px;
+      width: 10px;
       display: inline-block;
       position: absolute;
-      bottom: -25px;
+      bottom: -20px;
       left: calc(25% / 2 - 7.5);
       background-color: var(--color-text);
-      border-radius: 50px;
+      border-radius: 50%;
       z-index: 3;
       transition: 0.8s;
+    }
+
+    @include mq(extra-large) {
+      height: 15px;
+      width: 15px;
     }
   }
 }

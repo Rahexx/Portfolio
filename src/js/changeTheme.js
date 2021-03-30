@@ -18,27 +18,26 @@ import webpackHeader from '../assets/webpackDark.png';
 import styledComponentsHeader from '../assets/styled-componentsDark.png';
 
 const root = document.documentElement;
-const skillCssIcon = document.querySelector('.section__skillIcon:nth-child(1)');
-const skillBootstrapIcon = document.querySelector(
-  '.section__skillIcon:nth-child(2)',
-);
-const skillGitIcon = document.querySelector('.section__skillIcon:nth-child(3)');
-const skillHtmlIcon = document.querySelector(
-  '.section__skillIcon:nth-child(4)',
-);
-const skillJsIcon = document.querySelector('.section__skillIcon:nth-child(5)');
-const skillReactIcon = document.querySelector(
-  '.section__skillIcon:nth-child(6)',
-);
-const skillSassIcon = document.querySelector(
-  '.section__skillIcon:nth-child(7)',
-);
-const skillWebpackIcon = document.querySelector(
-  '.section__skillIcon:nth-child(8)',
-);
-const skillStyledComponentsIcon = document.querySelector(
-  '.section__skillIcon:nth-child(9)',
-);
+const skillIcons = document.querySelectorAll('.section__skillIcon');
+const bgIcons = document.querySelectorAll('.header__iconBg');
+const skillCssIcon = skillIcons[0];
+const skillBootstrapIcon = skillIcons[1];
+const skillGitIcon = skillIcons[2];
+const skillHtmlIcon = skillIcons[3];
+const skillJsIcon = skillIcons[4];
+const skillReactIcon = skillIcons[5];
+const skillSassIcon = skillIcons[6];
+const skillWebpackIcon = skillIcons[7];
+const skillStyledComponentsIcon = skillIcons[8];
+const bgCssIcon = bgIcons[0];
+const bgBootstrapIcon = bgIcons[1];
+const bgGitIcon = bgIcons[2];
+const bgHtmlIcon = bgIcons[3];
+const bgJsIcon = bgIcons[4];
+const bgReactIcon = bgIcons[5];
+const bgSassIcon = bgIcons[6];
+const bgWebpackIcon = bgIcons[7];
+const bgStyledComponentsIcon = bgIcons[8];
 
 const theme = {
   lightTheme: 'light',
@@ -54,14 +53,23 @@ const setDarkTheme = () => {
   root.style.setProperty('--color-footerInfo', 'rgba(255, 255, 255, 0.6)');
 
   skillCssIcon.src = cssWhite;
+  bgCssIcon.src = cssWhite;
   skillBootstrapIcon.src = bootstrapWhite;
+  bgBootstrapIcon.src = bootstrapWhite;
   skillGitIcon.src = gitWhite;
+  bgGitIcon.src = gitWhite;
   skillHtmlIcon.src = htmlWhite;
+  bgHtmlIcon.src = htmlWhite;
   skillJsIcon.src = jsWhite;
+  bgJsIcon.src = jsWhite;
   skillReactIcon.src = reactWhite;
+  bgReactIcon.src = reactWhite;
   skillSassIcon.src = sassWhite;
+  bgSassIcon.src = sassWhite;
   skillWebpackIcon.src = webpackWhite;
+  bgWebpackIcon.src = webpackWhite;
   skillStyledComponentsIcon.src = styledComponentsWhite;
+  bgStyledComponentsIcon.src = styledComponentsWhite;
 };
 
 const setLightTheme = () => {
@@ -72,14 +80,23 @@ const setLightTheme = () => {
   root.style.setProperty('--color-footerInfo', 'rgba(0, 0, 0, 0.3)');
 
   skillCssIcon.src = cssHeader;
+  bgCssIcon.src = cssHeader;
   skillBootstrapIcon.src = bootstrapHeader;
+  bgBootstrapIcon.src = bootstrapHeader;
   skillGitIcon.src = gitHeader;
+  bgGitIcon.src = gitHeader;
   skillHtmlIcon.src = htmlHeader;
+  bgHtmlIcon.src = htmlHeader;
   skillJsIcon.src = jsHeader;
+  bgJsIcon.src = jsHeader;
   skillReactIcon.src = reactHeader;
+  bgReactIcon.src = reactHeader;
   skillSassIcon.src = sassHeader;
+  bgSassIcon.src = sassHeader;
   skillWebpackIcon.src = webpackHeader;
+  bgWebpackIcon.src = webpackHeader;
   skillStyledComponentsIcon.src = styledComponentsHeader;
+  bgStyledComponentsIcon.src = styledComponentsHeader;
 };
 
 const changeTheme = () => {

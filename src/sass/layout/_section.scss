@@ -20,14 +20,14 @@
   }
 
   @include mq(large) {
-    height: 100vh;
+    height: 140vh;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
 
     &:nth-last-child(1) {
-      height: 130vh;
+      height: 140vh;
     }
 
     &::after {
@@ -46,6 +46,10 @@
     }
 
     @include mq(large) {
+      height: 140vh;
+    }
+
+    @include mq(extra-large) {
       height: 130vh;
     }
   }
@@ -85,12 +89,15 @@
     }
 
     @include mq(large) {
-      height: 418px;
-      width: 418px;
-      margin-top: 90px;
+      height: 318px;
+      width: 318px;
+      margin-top: 60px;
     }
 
     @include mq(extra-large) {
+      height: 418px;
+      width: 418px;
+      margin-top: 90px;
       transform: translateX(10vh);
     }
   }
@@ -159,13 +166,13 @@
     @include mq(large) {
       width: 100%;
       padding: 12px 42px 12px 92px;
-      font-size: 2.3rem;
+      font-size: 2rem;
       line-height: 28px;
     }
 
-    @include mq(large) {
+    @include mq(extra-large) {
       padding: 12px 33% 12px 92px;
-      font-size: 2.8rem;
+      font-size: 2.6rem;
       line-height: 35px;
     }
   }
@@ -267,7 +274,7 @@
     @include mq(large) {
       width: 100%;
       padding: 12px 42px 12px 92px;
-      font-size: 2.3rem;
+      font-size: 2rem;
     }
   }
 
@@ -284,7 +291,7 @@
       width: 100%;
       margin-bottom: 20px;
       padding-left: 92px;
-      font-size: 2.3rem;
+      font-size: 2rem;
       text-align: start;
     }
   }
