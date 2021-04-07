@@ -10,6 +10,7 @@
   border: 2px solid var(--color-text);
   background-color: var(--color-bg);
   border-radius: 11px;
+  transition: 0.5s;
 
   @include mq(small) {
     right: 30px;
@@ -27,12 +28,25 @@
     right: 1vw;
   }
 
+  &:hover {
+    border: 2px solid var(--color-hover);
+  }
+
   &__arrow {
     font-size: 2rem;
     color: var(--color-text);
+    transition: 0.5s;
 
     @include mq(large) {
       font-size: 2.7rem;
+
+      &:hover {
+        color: var(--color-hover);
+      }
     }
   }
+}
+
+.goTop:hover .goTop__arrow {
+  color: var(--color-hover);
 }
