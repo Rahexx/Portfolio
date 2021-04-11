@@ -85,6 +85,7 @@
     width: 40vh;
     margin-bottom: 40px;
     object-fit: cover;
+    transform: translate(0) scale(0);
 
     @include mq(extra-small) {
       height: 30vh;
@@ -106,7 +107,7 @@
       height: 418px;
       width: 418px;
       margin-top: 90px;
-      transform: translateX(10vh);
+      transform: translateX(10vh) scale(0);
     }
   }
 
@@ -259,11 +260,11 @@
 
   &__appImage {
     width: 105%;
-    transform: translateX(-5%);
+    transform: translateX(-5%) scale(0);
 
     @include mq(small) {
       width: 75%;
-      transform: translateX(15%);
+      transform: translateX(-15%) scale(0);
     }
 
     @include mq(large) {
@@ -271,7 +272,7 @@
       height: 356px;
       width: 510px;
       right: calc(50% + 70px);
-      transform: translateX(0);
+      transform: translateX(0) scale(0);
     }
 
     @include mq(extra-large) {
@@ -336,5 +337,50 @@
       padding-right: 92px;
       text-align: end;
     }
+  }
+}
+
+@keyframes showProfileImage {
+  from {
+    transform: translate(0) scale(0);
+  }
+  to {
+    transform: translate(0) scale(1);
+  }
+}
+
+@keyframes showProfileImageExtraLarge {
+  from {
+    transform: translateX(10vh) scale(0);
+  }
+  to {
+    transform: translateX(10vh) scale(1);
+  }
+}
+
+@keyframes showAppImageSmall {
+  from {
+    transform: translateX(0) scale(0);
+  }
+  to {
+    transform: translateX(-5%) scale(1);
+  }
+}
+
+@keyframes showAppImageLarge {
+  from {
+    transform: translateX(0) scale(0);
+  }
+  to {
+    transform: translateX(15%) scale(1);
+  }
+}
+
+@keyframes showAppImageExtraLarge {
+  from {
+    transform: translateX(0) scale(0);
+  }
+  to {
+    transform: translateX(0) scale(1);
   }
 }
