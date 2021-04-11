@@ -4,9 +4,11 @@ import pointActiveSection from './js/pointActiveSection';
 import goToSection from './js/goToSection';
 import changeTheme from './js/changeTheme';
 import hamburger from './js/hamburger';
+import showImages from './js/showImages';
 
 initalScrollTop();
 pointActiveSection();
 goToSection();
 changeTheme();
 hamburger();
+showImages();
