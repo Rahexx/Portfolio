@@ -80,7 +80,7 @@
     }
 
     & .section__title {
-      transform: translateX(-100%);
+      transform: translateX(-100vw);
     }
   }
 
@@ -146,12 +146,14 @@
     }
 
     & .section__title {
-      transform: translateX(100%);
+      transform: translateX(100vw);
     }
   }
 
   &__leftSide,
   &__rightSide {
+    overflow: hidden;
+
     @include mq(large) {
       height: 66%;
       margin-bottom: 0;
@@ -395,7 +397,7 @@
 
 @keyframes showTitleRightSide {
   from {
-    transform: translateX(100%);
+    transform: translateX(100vw);
   }
   to {
     transform: translateX(0);
@@ -404,7 +406,7 @@
 
 @keyframes showTitleLeftSide {
   from {
-    transform: translateX(-100%);
+    transform: translateX(-100vw);
   }
   to {
     transform: translateX(0);
