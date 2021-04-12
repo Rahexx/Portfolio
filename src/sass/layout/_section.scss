@@ -78,6 +78,10 @@
         display: none;
       }
     }
+
+    & .section__title {
+      transform: translateX(-100%);
+    }
   }
 
   &__profileImage {
@@ -392,6 +396,15 @@
 @keyframes showTitleRightSide {
   from {
     transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes showTitleLeftSide {
+  from {
+    transform: translateX(-100%);
   }
   to {
     transform: translateX(0);
