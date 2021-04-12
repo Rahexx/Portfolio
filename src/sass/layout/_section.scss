@@ -140,6 +140,10 @@
     @include mq(large) {
       height: 100%;
     }
+
+    & .section__title {
+      transform: translateX(100%);
+    }
   }
 
   &__leftSide,
@@ -382,5 +386,14 @@
   }
   to {
     transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes showTitleRightSide {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
   }
 }
