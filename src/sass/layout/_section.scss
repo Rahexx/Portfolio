@@ -81,6 +81,34 @@
 
     & .section__title {
       transform: translateX(-100vw);
+
+      @include mq(large) {
+        transform: translateX(-100%);
+      }
+    }
+
+    & .section__text {
+      transform: translateX(-100vw);
+
+      @include mq(large) {
+        transform: translateX(-100%);
+      }
+    }
+
+    & .section__listTechnology {
+      transform: translateX(-100vw);
+
+      @include mq(large) {
+        transform: translateX(-100%);
+      }
+    }
+
+    & .section__contact {
+      transform: translateX(-100vw);
+
+      @include mq(large) {
+        transform: translateX(-100%);
+      }
     }
   }
 
@@ -147,6 +175,34 @@
 
     & .section__title {
       transform: translateX(100vw);
+
+      @include mq(large) {
+        transform: translateX(100%);
+      }
+    }
+
+    & .section__text {
+      transform: translateX(100vw);
+
+      @include mq(large) {
+        transform: translateX(100%);
+      }
+    }
+
+    & .section__listTechnology {
+      transform: translateX(100vw);
+
+      @include mq(large) {
+        transform: translateX(100%);
+      }
+    }
+
+    & .section__contact {
+      transform: translateX(100vw);
+
+      @include mq(large) {
+        transform: translateX(100%);
+      }
     }
   }
 
